@@ -17,13 +17,13 @@ jobs:
     steps:
       - name: check out main
         uses: actions/checkout@main
-      - name: print pip version
-        run: pip -V
+      # - name: print pip version
+      #   run: pip -V
       - name: run tests
         run: |
               pip install -r requirements.txt
               python3 tests.py
-              
+
   print-logs:
     runs-on: macOS-latest
     name: Checkout and print repo and workflow info
