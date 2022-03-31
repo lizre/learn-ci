@@ -1,6 +1,6 @@
 
 """
-This script contains tests that the app included the word "stars", and that the http request
+This script contains tests that the app included the word "app", and that the http request
 returns 200 status.
  Code is from https://circleci.com/blog/setting-up-continuous-integration-with-github/
 
