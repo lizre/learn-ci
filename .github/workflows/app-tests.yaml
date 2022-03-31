@@ -21,9 +21,8 @@ jobs:
         run: pip -V
       - name: run tests
         run: |
-              pip install -r proj1/scripts/app/web-app/requirements.txt
+              pip install -r requirements.txt
               python3 tests.py
-              
   print-logs:
     runs-on: macOS-latest
     name: Checkout and print repo and workflow info
