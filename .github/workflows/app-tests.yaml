@@ -15,17 +15,16 @@ jobs:
     name: Test the app by running proj1 tests.py
     runs-on: ubuntu-latest
     steps:
+      - name: check out main
+        uses: actions/checkout@main
 
-    - name: check out main
-      uses: actions/checkout@main
+      - name: print pip version
+        run: pip -V
 
-    - name: print pip version
-      run: pip -V
-
-    - name: run tests
-      run: |
-            pip install -r proj1/scripts/app/web-app/requirements.txt
-            python3 proj1/scripts/app/web-app/tests.py
+      - name: run tests
+        run: |
+              pip install -r proj1/scripts/app/web-app/requirements.txt
+              python3 proj1/scripts/app/web-app/tests.py
 
   print-logs:
     runs-on: macOS-latest
