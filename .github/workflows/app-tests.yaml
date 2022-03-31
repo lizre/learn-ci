@@ -24,9 +24,9 @@ jobs:
       - name: print pip version
         run: pip -V
 
-  print-logs:
-    runs-on: macOS-latest
+   print-logs:
     name: Checkout and print repo and workflow info
+    runs-on: macOS-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
