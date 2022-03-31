@@ -21,8 +21,8 @@ jobs:
         run: |
               pip install -r requirements.txt
               python3 tests.py
-    # - name: print pip version
-    #   run: pip -V
+      - name: print pip version
+        run: pip -V
 
   # print-logs:
   #   runs-on: macOS-latest
