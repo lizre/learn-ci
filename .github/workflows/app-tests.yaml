@@ -20,6 +20,12 @@ jobs:
       with:
         python-version: '3.9'
         cache: 'pip'
+    - uses: actions/cache@v3
+      with:
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Install requirements
     - run: pip install -r requirements.txt
 
    setup-r:
@@ -50,6 +56,7 @@ jobs:
         uses: actions/checkout@main
       - name: run tests
         run: |
+              pip install -r requirements.txt
               python3 tests.py
       - name: print pip version
         run: pip -V
