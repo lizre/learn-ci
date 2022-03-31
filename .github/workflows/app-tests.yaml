@@ -17,8 +17,8 @@ jobs:
     steps:
       - name: check out
         uses: actions/checkout@main
-      - name: print pip version
-        run: pip -V
+      # - name: print pip version
+      #   run: pip -V
       - name: run tests
         run: |
         pip install -r requirements.txt
