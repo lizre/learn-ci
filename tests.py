@@ -12,4 +12,3 @@ with app.test_client() as test_client:
     response = test_client.get('/')
     assert b"app" in response.data, "app didn't say it was an app!"
     assert response.status_code == 200, "http request failed"
-    print("All tests passed!")
