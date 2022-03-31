@@ -11,7 +11,7 @@ on:
     workflow_dispatch:
 
 jobs:
-   app-tests:
+    app-tests:
     name: Test the app
     runs-on: macOS-latest
     steps:
@@ -24,9 +24,9 @@ jobs:
         pip install -r requirements.txt
         python3 tests.py
 
-  print-logs:
-    runs-on: macOS-latest
+    print-logs:
     name: Checkout and print repo and workflow info
+    runs-on: macOS-latest
     steps:
       - name: check out
         uses: actions/checkout@v2
