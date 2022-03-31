@@ -11,6 +11,18 @@ on:
     workflow_dispatch:
 
 jobs:
+   cached-pip
+   name: use cached pip
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+        cache: 'pip'
+    - run: pip install -r requirements.txt
+    - run: pip test
+
    pycodestyle-linter:
     name: pycodestyle linter
     runs-on: ubuntu-latest
