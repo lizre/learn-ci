@@ -11,10 +11,10 @@ on:
     workflow_dispatch:
 
 jobs:
-   cached-pip
-   name: use cached pip
-   runs-on: ubuntu-latest
-   steps:
+   cached-pip:
+    name: use cached pip
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v3
       with:
