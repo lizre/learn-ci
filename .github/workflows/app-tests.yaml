@@ -5,8 +5,8 @@ on:
         branches: main
         paths-ignore:
           - README.md
-          - .github/workflows/lint.yaml
-          - .github/workflows/app-tests.yaml
+#          - .github/workflows/lint.yaml
+#          - .github/workflows/app-tests.yaml
 
     workflow_dispatch:
 
