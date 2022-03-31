@@ -11,9 +11,19 @@ on:
     workflow_dispatch:
 
 jobs:
+   pycodestyle-linter:
+    name: pycodestyle linter
+    runs-on: ubuntu-latest
+    steps:
+    - name: check out main
+      uses: actions/checkout@main
+    - name: Python Style Checker
+      uses: andymckay/pycodestyle-action@0.1.3
+
    app-tests:
     name: Test the app
     runs-on: ubuntu-latest
+    needs: pycodestyle-linter #dependency
     steps:
       - name: check out main
         uses: actions/checkout@main
@@ -27,7 +37,7 @@ jobs:
    print-logs:
     name: Checkout and print repo and workflow info
     runs-on: macOS-latest
-    needs: app-tests
+    needs: app-tests # dependency
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
