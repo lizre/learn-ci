@@ -13,7 +13,7 @@ on:
 jobs:
    app-tests:
     name: Test the app
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     steps:
       - name: check out
         uses: actions/checkout@main
@@ -21,15 +21,14 @@ jobs:
         run: pip -V
       - name: run tests
         run: |
-              pip install -r requirements.txt
-              python3 tests.py
-
+        pip install -r requirements.txt
+        python3 tests.py
 
   print-logs:
     runs-on: macOS-latest
     name: Checkout and print repo and workflow info
     steps:
-      - name: Check out repository code
+      - name: check out
         uses: actions/checkout@v2
 
       - name: Use variables to print text about this workflow and repo
